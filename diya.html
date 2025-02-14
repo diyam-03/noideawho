@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffccdc;
+            margin: 0;
+            font-family: cursive;
+            overflow: hidden;
+            position: relative;
+        }
+        .card {
+            position: relative;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 500px;
+            animation: slideIn 1s ease-in-out;
+        }
+        .dog-container img {
+            width: 300px;
+            margin-bottom: 10px;
+            animation: bounceIn 1.5s ease;
+        }
+        .message {
+            font-size: 25px;
+            font-weight: bold;
+            color: #d63384;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+        }
+        .buttons button {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .yes-btn {
+            background-color: #ff5e78;
+            color: white;
+            width: 100px;
+        }
+        .no-btn {
+            background-color: #ccc;
+            color: black;
+            width: 100px;
+        }
+        .buttons button:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+        
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Heart popping background */
+        @keyframes heartPop {
+            0% {
+                transform: scale(1);
+                opacity: 0.2;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.2;
+            }
+        }
+
+        .heart {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 0, 0, 0.5);
+            clip-path:  path("M 50 15 C 20 -10, -20 40, 50 100 C 120 40, 80 -10, 50 15");
+            animation: heartPop 1s infinite;
+            top: 10%;
+            left: 30%;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 50%;
+            animation-delay: 0.5s;
+        }
+
+        .heart:nth-child(3) {
+            left: 70%;
+            animation-delay: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+
+    <div class="card">
+        <div class="dog-container">
+            <img src="C:\Users\diyad\Downloads\dog.png" alt="Cute Dog with Heart">
+        </div>
+        <div class="message">Mr. Rugved Tatkare will you be my valentine for our 4 months? ❤️</div>
+        <div class="buttons">
+            <button class="yes-btn" onclick="openPage('yes.html')">Yes</button>
+            <button class="no-btn" onclick="openPage('no.html')">No</button>
+        </div>
+    </div>
+
+    <script>
+        function openPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
